@@ -21,7 +21,7 @@ public class CaseOneDemo extends AbstractCaseOne implements OptionsInterface {
 
     @Override
 	public void addVariables(IJobSetup setup) {
-        setup.addVariable("Strategy", "Strategy to use", "string", "one");
+    	setup.addVariable("TeamCode", "Team code given to you", "string", "");
         setup.addVariable("factor", "Some factor", "double", "0.2");
 	}
 
