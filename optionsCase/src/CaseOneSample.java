@@ -19,8 +19,6 @@ public class CaseOneSample extends AbstractCaseOne implements OptionsInterface {
 
 	@Override
 	public void initializeAlgo(IDB dataBase, List<String> instruments) {
-		// TODO Auto-generated method stub
-		// blah
 		String strategy = getStringVar("Strategy");
 		if (strategy.contains("one")) {
 			// do strategy one
@@ -35,20 +33,16 @@ public class CaseOneSample extends AbstractCaseOne implements OptionsInterface {
 
 	@Override
 	public void noBrokerFills() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void penaltyNotice(double amount) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public OptionsInterface getImplementation() {
 		// TODO Auto-generated method stub
-		return null;
+		return new CaseOneSample();
 	}
 
 	@Override
