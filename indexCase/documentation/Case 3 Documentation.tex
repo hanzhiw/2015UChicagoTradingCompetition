@@ -1,0 +1,249 @@
+\documentclass{amsart}
+\usepackage[letterpaper, portrait, margin=1in]{geometry}
+
+%----------Packages----------
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsrefs}
+\usepackage[mathcal]{eucal}
+\usepackage{verbatim}  %%includes comment environment
+\usepackage[parfill]{parskip}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@maketitle}
+  {\ifx\@empty\@dedicatory}
+  {\ifx\@empty\@date \else {\vskip3ex \centering\footnotesize\@date\par\vskip1ex}\fi
+   \ifx\@empty\@dedicatory}
+  {}{}
+\patchcmd{\@adminfootnotes}
+  {\ifx\@empty\@date\else \@footnotetext{\@setdate}\fi}
+  {}{}{}
+\makeatother
+%----------Commands----------
+
+%%penalizes orphans
+\clubpenalty=9999
+\widowpenalty=9999
+
+%% bold math capitals
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\bH}{\mathbf{H}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
+\newcommand{\bK}{\mathbf{K}}
+\newcommand{\bL}{\mathbf{L}}
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bO}{\mathbf{O}}
+\newcommand{\bP}{\mathbf{P}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\bR}{\mathbf{R}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bU}{\mathbf{U}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bW}{\mathbf{W}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\bZ}{\mathbf{Z}}
+
+%% blackboard bold math capitals
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+%% script math capitals
+\newcommand{\sA}{\mathscr{A}}
+\newcommand{\sB}{\mathscr{B}}
+\newcommand{\sC}{\mathscr{C}}
+\newcommand{\sD}{\mathscr{D}}
+\newcommand{\sE}{\mathscr{E}}
+\newcommand{\sF}{\mathscr{F}}
+\newcommand{\sG}{\mathscr{G}}
+\newcommand{\sH}{\mathscr{H}}
+\newcommand{\sI}{\mathscr{I}}
+\newcommand{\sJ}{\mathscr{J}}
+\newcommand{\sK}{\mathscr{K}}
+\newcommand{\sL}{\mathscr{L}}
+\newcommand{\sM}{\mathscr{M}}
+\newcommand{\sN}{\mathscr{N}}
+\newcommand{\sO}{\mathscr{O}}
+\newcommand{\sP}{\mathscr{P}}
+\newcommand{\sQ}{\mathscr{Q}}
+\newcommand{\sR}{\mathscr{R}}
+\newcommand{\sS}{\mathscr{S}}
+\newcommand{\sT}{\mathscr{T}}
+\newcommand{\sU}{\mathscr{U}}
+\newcommand{\sV}{\mathscr{V}}
+\newcommand{\sW}{\mathscr{W}}
+\newcommand{\sX}{\mathscr{X}}
+\newcommand{\sY}{\mathscr{Y}}
+\newcommand{\sZ}{\mathscr{Z}}
+
+
+\renewcommand{\phi}{\varphi}
+
+\renewcommand{\emptyset}{\O}
+
+\providecommand{\abs}[1]{\lvert #1 \rvert}
+\providecommand{\norm}[1]{\lVert #1 \rVert}
+
+
+\providecommand{\sarr}{\rightarrow}
+\providecommand{\arr}{\longrightarrow}
+
+\renewcommand{\_}[1]{\underline{ #1 }}
+\providecommand{\rap}{\rightleftharpoons}
+
+\def\inprobLOW{\rightarrow_p}
+\def\inprobHIGH{\,{\buildrel p \over \rightarrow}\,} 
+\def\inprob{\,{\inprobHIGH}\,} 
+
+\def\indistLOW{\rightarrow_d}
+\def\indistHIGH{\,{\buildrel d \over \rightarrow}\,} 
+\def\indist{\,{\indistHIGH}\,} 
+
+
+\DeclareMathOperator{\ext}{ext}
+
+
+
+%----------Theorems----------
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{corollary}[thm]{Corollary}
+
+
+\newtheorem*{axiom4}{Axiom 4}
+
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{nondefinition}[thm]{Non-Definition}
+\newtheorem{exer}[thm]{Exercise}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{warning}[thm]{Warning}
+\newtheorem{exmps}[thm]{Examples}
+\newtheorem{exmp}[thm]{Example}
+\numberwithin{equation}{subsection}
+
+
+\begin{document}
+
+\title{Case 3: Index Tracking}
+\maketitle
+
+\setlength{\parindent}{0.5cm}
+%----------------------1----------------------%
+\section{Introduction}
+
+Consider a cap-weighted index comprised of 30 stocks (UC30). You are the manager of a fund aimed at mimicking the returns of the index. However, due to the constantly changing regulatory environment, you are never allowed to trade or hold all 30 of the stocks at any one time.\\
+
+Your goal is to have your fund track the returns of the index as closely as possible, while trading only the legally permissible stocks and subject to transaction costs.
+
+%----------------------2----------------------%
+\section{Data}
+The case will run for 1,000 ticks (days) over 3 rounds. At the start of each round, and at every tick thereafter, participants will be provided with the prices of all 30 stocks as well as the value of the index. Participants' algorithms will take this data and return their desired portfolio weights. The platform will adjust their portfolio weights and calculate transaction costs accordingly. \\
+
+Occasionally (approximately once every 50 ticks), announcements will be made regarding the tradability of non-tradability of certain stocks. The new regulations will kick in 20 ticks after they're announced, so participants should adjust their positions accordingly before the new laws apply. Holding positions in stocks that are no longer allowed to be traded will lead to penalties. Note that it will be possible for multiple announcements to occur in a short period (though not multiple in the same tick $t$).\\
+
+To assist participants in designing their portfolio-tracking algorithm, teams will be provided with 10,000 ticks of historical data comprising of all 30 stocks prices and the index value for each period. Competition data will be drawn from the same distribution as the historical data. \\
+
+The underlying true index weights and the distribution of underlying stocks will differ across all 3 rounds. (Think of each case as a completely different index.) Hence, participants will be provided with three separate sets of historical data, and should tweak their algorithms accordingly for each round.
+
+%----------------------3----------------------%
+\section{Penalty $\&$ Transaction Costs}
+
+Transaction costs apply when a trade is made in either direction, i.e. whenever the portfolio weight for any stock is modified from period-to-period. These will be incurred per-period. The transaction cost function is defined as the following:
+
+\textbf{PLACEHOLDER}
+$$TCOST(\Delta_{i,t}) = \exp\left(\abs{\Delta_{i,t}}\right) - 1$$
+where $\Delta_{i,t}$ is the change in portfolio weight of stock $i$ at time $t$. For example, if the portfolio weight for stock A changes from 0.05 to 0.06, $\Delta_{i,t}) = 0.01$. Transaction costs are summed over all periods and all stocks. 
+
+Penalties for holding onto a stock that is no longer tradable will be calculated as follows:
+
+\textbf{PLACEHOLDER}
+$$PENALTY(w_{i,t}) = \begin{cases}
+0 \text{ if stock $i$ is tradable at time $t$}\\
+exp(\abs{100w_{i,t}})
+\end{cases}$$
+
+where $w_{i,t}$ is the portfolio weight of stock $i$ at time $t$. E.g. $w_{i,t} = 0.05$ means 5\% of the portfolio is allocated to stock $i$.
+
+%----------------------4----------------------%
+\section{Scoring}
+Teams will be scored on the following formula (summed over 3 rounds):
+$$\text{Score} = \sum_{t=1}^{1000} (r_{I,t} - r_{P,t})^2 - \text{TOTAL TCOST} - \text{TOTAL PENALTIES}$$
+
+where $r_{I,t}$ is the 1-period log-return of the Index between time $t$ and time $t-1$, and $r_{P,t}$ is the 1-period log-return of your portfolio between time $t$ and time $t-1$. In other words, 
+$$r_{I,t} = log\frac{\text{INDEX}_t}{\text{INDEX}_{t-1}}$$
+$$r_{P,t} = log\frac{\text{PORTFOLIO}_t}{\text{PORTFOLIO}_{t-1}}$$
+
+%----------------------5----------------------%
+\section{Case Objects $\&$ Interface}
+Teams should take note of the following Case Objects:
+
+\verb+PortfolioWeights+ is a wrapper for an array of doubles, representing the weight of the portfolio in each asset. It is enforced to sum to 1.
+
+\verb+TradableSet+ is a wrapper for an array of booleans, representing whether each asset is tradable.\\
+
+Teams will have to implement the following methods for this case: 
+
+\begin{verbatim}
+    public PortfolioWeights InitializePosition(double[] underlyingPrices, double indexValue,  
+                                               TradableSet tradables)
+\end{verbatim}
+
+This method will be invoked at the beginning of each round for participants to initialize their positions (no transaction costs for establishing initial positions). 
+
+The argument \verb underlyingPrices  contains information for the starting prices of the universe of assets at the start of the case and \verb indexValue  is the value of the index at the start of the case. The implementation should return an array corresponds to the portfolio weights, and must sum to 1. \\
+
+\begin{verbatim}
+    public PortfolioWeights PositionUpdates(int t, double[] underlyingPrices, 
+                                            double indexValue)
+\end{verbatim}
+
+This method is called every period and participants will get updates of the prices and index values from the previous day, and return their \textit{desired} positions for the day. Transaction costs are calculated accordingly. Arguments contain information for the prices of assets and index value at time $t$. The implementation should return an array corresponds to the portfolio weights, and must sum to 1. \\
+
+\begin{verbatim}
+    public void RegulationChangeAnnouncement(int t, TradableSet tradableStocks)
+\end{verbatim}
+
+Participants are informed about what stocks are tradable/untradable through this method, taking effect 20 ticks later. This method is called before \verb RoundOnePositionUpdates  for the same period $t$. The boolean array contains information for whether the stock is tradable or not at time $t+20$. 
+\end{document}
