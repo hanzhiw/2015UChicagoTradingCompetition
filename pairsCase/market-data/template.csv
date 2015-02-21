@@ -1,8 +1,0 @@
-# Specifies the max limits for this round
-S,1000,limits;100
-
-# Specifies the symbols available for this round
-S,1000,symbols;S1;S2
-
-#S,1000,symbol;bid;offer
-S,1000,S1,100,102
