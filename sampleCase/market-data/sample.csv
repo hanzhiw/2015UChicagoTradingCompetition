@@ -1,3 +1,0 @@
-# You can specify the exact market data for each instrument over time.  I will
-send you more information on the format of this, but it likely involves you essentially
-building a script that can generate a csv file of this data based on your intended model.
