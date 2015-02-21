@@ -1,6 +1,6 @@
-uchicago2015
-============
+# UChicago Trading Competition Quickstart
+# Getting Started
 
-Internal source repo for the 2015 University of Chicago Competition.  We will use this repo to track internal progress for developing the interfaces and samples for each case.
+A quickstart workspace is supplied for competitors to clone when they begin developing their strategies. This repo includes a sample implementation of each case (under /src) and sample workspaces for the Eclipse (.project) and IntelliJ (.idea) IDEs.
 
-Please make sure you follow the general structure of the existing repo.  Please check files in under the respective case and name sub-folders of your case with intuitive names.  I will palce some common folders under each case: src, market-data, instruments, etc.  These will like be common to all cases and therefore make it easy for everyone to find the relevant materials.
+The contents of this repository are identical to the .zip file in the Dropbox folder provided. Therefore, if you are not comfortable with git, the same code is available through Dropbox.
