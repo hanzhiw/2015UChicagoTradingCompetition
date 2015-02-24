@@ -12,9 +12,15 @@ import com.optionscity.freeway.api.IJobSetup;
 
 public class CaseOneSample extends AbstractCaseOne implements OptionsInterface {
 
-	@Override
+    private IDB myDatabase;
+
+    // Note that this implementation uses price of 100 call for ALL options
+    double currentBid = case1util.BlackSholes(100, 0.3)-1;
+    double currentAsk = CaseOneUtil.BlackSholes(100, 0.3)+1;
+
+    @Override
 	public void addVariables(IJobSetup setup) {
-		setup.addVariable("Strategy", "Strategy to use", "string", "one");
+        setup.addVariable("Strategy", "Strategy to use", "string", "one");
 	}
 
 	@Override
@@ -28,16 +34,36 @@ public class CaseOneSample extends AbstractCaseOne implements OptionsInterface {
 	@Override
 	public void newFill(int strike, int side, double price) {
 		// TODO Auto-generated method stub
-		
+        log("My logic received a quote Fill, price=" + price + ", strike=" + strike + ", direction=" + side);
+        currentBid -= 1;
+        currentAsk += 1;
 	}
+
+    @Override
+    public QuoteList getCurrentQuotes(){
+        // TODO Auto-generated method stub
+        log("My Case1 implementation received a request for current quotes");
+        Quote quoteEighty = new Quote(80, currentBid,currentAsk);
+        Quote quoteNinety = new Quote(90, currentBid,currentAsk);
+        Quote quoteHundred = new Quote(100, currentBid,currentAsk);
+        Quote quoteHundredTen = new Quote(110, currentBid,currentAsk);
+        Quote quoteHundredTwenty = new Quote(120, currentBid,currentAsk);
+
+        return new QuoteList(quoteEighty,quoteNinety,quoteHundred,quoteHundredTen,quoteHundredTwenty);
+    }
 
 	@Override
 	public void noBrokerFills() {
+
 	}
+
 
 	@Override
 	public void penaltyNotice(double amount) {
-	}
+		// TODO Auto-generated method stub
+        log("Penalty received in the amount of " + amount);
+    }
+
 
 	@Override
 	public OptionsInterface getImplementation() {
@@ -45,11 +71,6 @@ public class CaseOneSample extends AbstractCaseOne implements OptionsInterface {
 		return new CaseOneSample();
 	}
 
-	@Override
-	public QuoteList getCurrentQuotes() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	
 }
