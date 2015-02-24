@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="freeway-6.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="widgets-6.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="commons-math3-3.4.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="options.jar"/>
 	<classpathentry kind="output" path="bin"/>

@@ -1,3 +1,0 @@
-The goal of this sample case is to receive price updates on a virtual underlying stock and corresponding options.  There will be three different strikes for the options and price updates will occur for each strike in no particular order.  Your logic should use the price updates for the various products to calculate your own theoretical values and subsequent quotes for the options.
-
-Periodically, the system will ask you for price updates for each of the options, in which case you can respond with a list of orders for each.  Orders will be filled as if there is unlimited liquidity.  You will receive a fill notification for the price and quantity of your order once the fill is complete.
