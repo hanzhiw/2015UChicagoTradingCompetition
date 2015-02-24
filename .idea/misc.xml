@@ -149,6 +149,9 @@
     </configuration>
     <list size="0" />
   </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
   <component name="masterDetails">
     <states>
       <state key="ProjectJDKs.UI">

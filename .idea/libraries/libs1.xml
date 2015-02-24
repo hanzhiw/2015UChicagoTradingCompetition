@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="libs1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/index.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/freeway-6.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/pairs.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/options.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-math3-3.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
